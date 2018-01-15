@@ -14,6 +14,7 @@ docker run -d \
   --privileged \
   -v $HOST_OUT_DIR:$OW_OUT_DIR:rw \
   -p 8888:8888 \
-  openworm/openworm-notebook:0.8
+  openworm/openworm-notebook:0.8 \
+  start-notebook.sh --NotebookApp.token=''
 
 echo "open up a browser and point at http://localhost:8888"
