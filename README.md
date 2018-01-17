@@ -28,14 +28,19 @@ We have put together a [docker container](http://docker.com) that pulls together
 
 **Installation**
 
-Pre-requisites:
+*Pre-requisites*
 
-1. Currently Windows is not supported; you will need Mac OS or Linux (or a virtual environment on Windows that runs either of those).
-2. You should have at least 60 GB of free space on your machine and at least 2GB of RAM
+You should have at least 60 GB of free space on your machine and at least 2GB of RAM
 
-To Install:
+*To Install*
+
+For Linux or Mac:
 
 1. Install [Docker](http://docker.com) on your system.  
+
+For Windows:
+
+[Follow instructions here](INSTALL-WINDOWS.md)
 
 **Running**
 
@@ -50,7 +55,7 @@ To Install:
 Try the following to play around with the system:
 
 * Open a terminal and run `run-shell-only.sh`.  This will let you log into the system before it has run `master_openworm.py`.  From here you can inspect the internals of the various checked out code bases and installed systems and modify things. Afterwards you'll still need to run `stop.sh` to clean up.
-* If you modify what gets installed, you should modify Dockerfile.  If you modify what runs, you should modify `master_openworm.py`.  Either way you will need to run `build.py` in order to rebuild the image locally.  Afterwards you can run normally.
+* If you modify what gets installed, you should modify `Dockerfile`.  If you modify what runs, you should modify `master_openworm.py`.  Either way you will need to run `build.py` in order to rebuild the image locally.  Afterwards you can run normally.
 
 Documentation
 -------------
