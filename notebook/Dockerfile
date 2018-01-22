@@ -52,7 +52,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends apt-utils \
   libnuma1 \
   openmpi-bin  libopenmpi-dev \
   libgl1-mesa-glx libgl1-mesa-dri libfreetype6-dev \ 
-  libpng12-dev libxft-dev xubuntu-desktop ffmpeg xvfb tmux
+  libpng12-dev libxft-dev xubuntu-desktop ffmpeg \
+  xvfb tmux \
+  texlive-latex-extra texlive-bibtex-extra
 
 RUN sudo usermod -a -G video $USER
 
