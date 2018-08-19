@@ -50,6 +50,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends apt-utils \
   linux-source linux-headers-generic \
   maven openjdk-8-jdk \
   libnuma1 \
+  python-setuptools \
   openmpi-bin  libopenmpi-dev \
   libgl1-mesa-glx libgl1-mesa-dri libfreetype6-dev \ 
   libpng12-dev libxft-dev xubuntu-desktop ffmpeg \
@@ -108,17 +109,10 @@ RUN tar xvf intel_sdk_for_opencl_$INTEL_SDK_VERSION.tgz && \
   rm /tmp/silent-intel-sdk.cfg
 
 USER $USER
-
-RUN git clone https://github.com/NeuroML/jNeuroML.git && \
-  chown -R $USER jNeuroML && \
-  cd jNeuroML && \
-  git checkout 485e905 && \
-  python2 getNeuroML.py ow-0.1
   
-RUN git clone https://github.com/lungd/pyNeuroML.git && \
-  chown -R $USER pyNeuroML && \
+RUN git clone https://github.com/NeuroML/pyNeuroML.git && \
   cd pyNeuroML && \
-  git checkout ow-0.1 && \
+  git checkout ow-0.8a  && \
   python setup.py install
 
 RUN git clone https://github.com/openworm/PyOpenWorm.git && \
@@ -127,10 +121,9 @@ RUN git clone https://github.com/openworm/PyOpenWorm.git && \
   git checkout 7ff1266 && \
   python setup.py install
 
-RUN git clone https://github.com/lungd/CElegansNeuroML.git && \
-  chown -R $USER CElegansNeuroML && \
-  cd CElegansNeuroML && \
-  git checkout ow-0.1
+RUN git clone https://github.com/openworm/c302.git && \  
+  cd c302 && \
+  python setup.py install
 
 RUN git clone https://github.com/lungd/sibernetic.git && \
   chown -R $USER sibernetic && \
