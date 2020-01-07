@@ -18,7 +18,7 @@ In the shell you are given, run the following commands:
 ```
 git clone http://github.com/openworm/openworm
 cd openworm
-./run-shell-only-windows.sh
+./run-shell-only.sh
 ```
 
 This will give you a new shell.  Inside that:
